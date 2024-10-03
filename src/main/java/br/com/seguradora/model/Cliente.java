@@ -1,24 +1,31 @@
 package br.com.seguradora.model;
 
+import br.com.seguradora.model.seguros.Seguro;
+
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.List;
 
 public class Cliente {
     private Long id;
     private String nome;
     private String cpf;
     private boolean isAtivo;
-    private SeguroEnum tipoSeguro;
+    private List <Seguro> seguro;
     private LocalDate dataNasc;
+    private int idade;
 
-    public Cliente(Long id, String nome, String cpf, boolean isAtivo, SeguroEnum tipoSeguro, LocalDate dataNasc) {
+
+    public Cliente(Long id, String nome, String cpf, boolean isAtivo, List<Seguro> seguro, LocalDate dataNasc, int idade) {
         this.id = id;
         this.nome = nome;
         isCpfValid(cpf);
         this.isAtivo = isAtivo;
-        this.tipoSeguro = tipoSeguro;
+        this.seguro = seguro;
         setDataNasc(dataNasc);
+        this.idade = (int) ChronoUnit.YEARS.between(dataNasc, LocalDate.now());
     }
+
 
     public Long getId() {
         return id;
@@ -65,12 +72,12 @@ public class Cliente {
         isAtivo = ativo;
     }
 
-    public SeguroEnum getTipoSeguro() {
-        return tipoSeguro;
+    public List<Seguro> getSeguro() {
+        return seguro;
     }
 
-    public void setTipoSeguro(SeguroEnum tipoSeguro) {
-        this.tipoSeguro = tipoSeguro;
+    public void setSeguro(List<Seguro> seguro) {
+        this.seguro = seguro;
     }
 
     //verifica se é maior de idade
