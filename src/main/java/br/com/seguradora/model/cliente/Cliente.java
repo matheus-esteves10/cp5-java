@@ -1,4 +1,4 @@
-package br.com.seguradora.model;
+package br.com.seguradora.model.cliente;
 
 import br.com.seguradora.model.seguros.Seguro;
 
@@ -7,21 +7,23 @@ import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 public class Cliente {
+    Seguro seguro = new Seguro();
+
     private Long id;
     private String nome;
     private String cpf;
     private boolean isAtivo;
-    private List <Seguro> seguro;
+    private List<Seguro> listaSeguro;;
     private LocalDate dataNasc;
     private int idade;
 
 
-    public Cliente(Long id, String nome, String cpf, boolean isAtivo, List<Seguro> seguro, LocalDate dataNasc, int idade) {
+    public Cliente(Long id, String nome, String cpf, boolean isAtivo, List<Seguro> listaSeguro, LocalDate dataNasc, int idade) {
         this.id = id;
         this.nome = nome;
         isCpfValid(cpf);
         this.isAtivo = isAtivo;
-        this.seguro = seguro;
+        setListaSeguro(listaSeguro);
         setDataNasc(dataNasc);
         this.idade = (int) ChronoUnit.YEARS.between(dataNasc, LocalDate.now());
     }
@@ -49,12 +51,14 @@ public class Cliente {
 
     //RN: CASO O USUÁRIO SEJA MENOR DE IDADE NÃO PODE TER CADASTRO PARA ADQUIRIR UM SEGURO
     public void setDataNasc(LocalDate dataNasc) {
-        if(verificaIdade()) {
+        long idade = ChronoUnit.YEARS.between(dataNasc, LocalDate.now());
+        if (idade >= 18) {
             this.dataNasc = dataNasc;
         } else {
             throw new RuntimeException("usuario deve ser maior de idade");
         }
     }
+
 
     public String getCpf() {
         return cpf;
@@ -72,12 +76,13 @@ public class Cliente {
         isAtivo = ativo;
     }
 
-    public List<Seguro> getSeguro() {
-        return seguro;
+    public List<Seguro> getListaSeguro() {
+        return listaSeguro;
     }
 
-    public void setSeguro(List<Seguro> seguro) {
-        this.seguro = seguro;
+    public void setListaSeguro(List<Seguro> listaSeguro) {
+        listaSeguro.add((Seguro) seguro.getInfos());
+        this.listaSeguro = listaSeguro;
     }
 
     //verifica se é maior de idade

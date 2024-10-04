@@ -1,8 +1,9 @@
 package br.com.seguradora.model.seguros;
 
 import br.com.seguradora.service.IPrecificacaoCarro;
+import br.com.seguradora.service.ISeguro;
 
-public class SeguroCarro extends Seguro implements IPrecificacaoCarro {
+public class SeguroCarro extends Seguro implements IPrecificacaoCarro, ISeguro {
 
     private CarroEnum carro;
     private int idade;
@@ -40,6 +41,11 @@ public class SeguroCarro extends Seguro implements IPrecificacaoCarro {
             throw new IllegalArgumentException("Carro não pode ser nulo");
         }
         return 0.04 * carro.getValorTabelaFipe();
+    }
+
+    @Override
+    public void define() {
+        System.out.println("Seguro de carro");
     }
 }
 

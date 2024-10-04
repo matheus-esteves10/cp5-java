@@ -1,6 +1,5 @@
 package br.com.seguradora.model.seguros;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class Seguro{
@@ -24,5 +23,4 @@ public class Seguro{
     public Map<String, Double> getInfos() {
         return infos;
     }
-
 }
