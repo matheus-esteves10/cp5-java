@@ -1,6 +1,6 @@
 package br.com.seguradora.model.seguros;
 
-import br.com.seguradora.service.IPrecificacaoCarro;
+import br.com.seguradora.service.precificacoes.IPrecificacaoCarro;
 import br.com.seguradora.service.ISeguro;
 
 public class SeguroCarro extends Seguro implements IPrecificacaoCarro, ISeguro {
