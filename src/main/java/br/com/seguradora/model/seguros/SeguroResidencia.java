@@ -58,7 +58,7 @@ public class SeguroResidencia extends Seguro implements ISeguro, IPecificacaoRes
     @Override
     public void defineValor(double valorResidencia) {
         var valor =  valorResidencia * 0.001;
-        getInfos().put("seguroResidencia", valor);
+
         if (temSistemaSeguranca) {
             valor *= 0.9;
         }
@@ -74,6 +74,7 @@ public class SeguroResidencia extends Seguro implements ISeguro, IPecificacaoRes
         if (coberturaDesastresNaturais) {
             valor += 700;
         }
+        getInfos().put("seguroResidencia", valor);
     }
 
 }
