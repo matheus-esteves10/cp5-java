@@ -8,9 +8,12 @@ public class SeguroCarro extends Seguro implements IPrecificacaoCarro, ISeguro {
     private CarroEnum carro;
     private int idade;
 
-    public SeguroCarro() {}
+    public SeguroCarro() {
+        super();
+    }
 
     public SeguroCarro(CarroEnum carro, int idade) {
+        super();
         this.tipo = "SeguroCarro";
         this.carro = carro;
         this.idade = idade;
@@ -48,8 +51,3 @@ public class SeguroCarro extends Seguro implements IPrecificacaoCarro, ISeguro {
         System.out.println("Seguro de carro");
     }
 }
-
-
-
-
-

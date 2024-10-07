@@ -1,23 +1,16 @@
 package br.com.seguradora.model.seguros;
 
+import java.util.HashMap;
 import java.util.Map;
 
-public class Seguro{
-    protected Map<String, Double> infos;
+public class Seguro {
     protected String tipo;
-    protected Double valor;
+    protected double valor;
+    protected Map<String, Double> infos;
 
+    // Construtor padrão
     public Seguro() {
-    }
-
-    public Seguro(Map<String, Double> infos, String tipo, Double valor) {
-        this.infos = infos;
-        this.tipo = tipo;
-        this.valor = valor;
-    }
-
-    public Seguro(Map<String, Double> infos) {
-        this.infos = infos;
+        this.infos = new HashMap<>();
     }
 
     public Map<String, Double> getInfos() {
