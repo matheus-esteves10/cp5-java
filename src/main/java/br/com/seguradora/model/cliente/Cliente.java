@@ -13,7 +13,7 @@ public class Cliente {
     private String nome;
     private String cpf;
     private boolean isAtivo;
-    private List<Seguro> listaSeguro;;
+    private List<Seguro> listaSeguro;
     private LocalDate dataNasc;
     private int idade;
 
