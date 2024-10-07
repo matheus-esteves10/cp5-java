@@ -9,9 +9,10 @@ public class SeguroResidencia extends Seguro implements ISeguro, IPecificacaoRes
 
 
     public SeguroResidencia(double valorResidencia) {
+        super();
         this.tipo = "SeguroResidencia";
         this.valorResidencia = valorResidencia;
-        this.preco = defineValor(valorResidencia);
+        defineValor(valorResidencia);
     }
 
     public double getPreco() {
@@ -28,8 +29,9 @@ public class SeguroResidencia extends Seguro implements ISeguro, IPecificacaoRes
     }
 
     @Override
-    public double defineValor(double valorResidencia) {
-        return valorResidencia * 0.001;
+    public void defineValor(double valorResidencia) {
+        var valor =  valorResidencia * 0.001;
+        getInfos().put("seguroResidencia", valor);
     }
 
 }

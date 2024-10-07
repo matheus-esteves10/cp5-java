@@ -18,6 +18,14 @@ public class Main {
             System.out.println("Valor do seguro do carro: " + preco);
         }
 
+        ISeguro seguroResidencia = factory.getSeguro("SeguroResidencia");
+        if (seguroResidencia instanceof SeguroResidencia) {
+            SeguroResidencia seguroResidenciaCast = (SeguroResidencia) seguroResidencia;
+
+            var preco = seguroResidenciaCast.getInfos();
+            System.out.println("Valor do seguro de residência: " + preco);
+        }
+
 //        ISeguro seguroVida = factory.getSeguro("SeguroVida");
 //        if (seguroVida instanceof SeguroVida) {
 //            SeguroVida seguroVidaCast = (SeguroVida) seguroVida;
@@ -25,12 +33,7 @@ public class Main {
 //            System.out.println("Valor do seguro de vida: " + valor);
 //        }
 //
-//        ISeguro seguroResidencia = factory.getSeguro("SeguroResidencia");
-//        if (seguroResidencia instanceof SeguroResidencia) {
-//            SeguroResidencia seguroResidenciaCast = (SeguroResidencia) seguroResidencia;
-//            double valor = seguroResidenciaCast.defineValor(500000);
-//            System.out.println("Valor do seguro de residência: " + valor);
-//        }
+
 
     }
 }
