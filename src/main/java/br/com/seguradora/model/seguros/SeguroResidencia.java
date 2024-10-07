@@ -4,7 +4,6 @@ import br.com.seguradora.service.ISeguro;
 import br.com.seguradora.service.precificacoes.IPecificacaoResidencia;
 
 public class SeguroResidencia extends Seguro implements ISeguro, IPecificacaoResidencia {
-    private double preco;
     private double valorResidencia;
 
 
@@ -15,9 +14,7 @@ public class SeguroResidencia extends Seguro implements ISeguro, IPecificacaoRes
         defineValor(valorResidencia);
     }
 
-    public double getPreco() {
-        return preco;
-    }
+
 
     public double getValorResidencia() {
         return valorResidencia;

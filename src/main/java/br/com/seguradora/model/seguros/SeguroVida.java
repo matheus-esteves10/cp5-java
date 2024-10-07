@@ -4,16 +4,13 @@ import br.com.seguradora.service.ISeguro;
 import br.com.seguradora.service.precificacoes.IPrecificacaoVida;
 
 public class SeguroVida extends Seguro implements ISeguro, IPrecificacaoVida {
-    double valor;
+
 
     public SeguroVida(int idade) {
         super();
         retornaValor(idade);
     }
 
-    public double getValor() {
-        return valor;
-    }
 
     @Override
     public void define() {
