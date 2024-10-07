@@ -90,7 +90,6 @@ public class Cliente {
         if (dataNasc == null) {
             return false;
         }
-
         long idade = ChronoUnit.YEARS.between(dataNasc, LocalDate.now());
         return idade >= 18;
     }

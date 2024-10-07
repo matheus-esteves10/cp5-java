@@ -14,7 +14,7 @@ public class SeguroCarro extends Seguro implements IPrecificacaoCarro, ISeguro {
 
     public SeguroCarro(CarroEnum carro, int idade) {
         super();
-        this.tipo = "SeguroCarro";
+        this.tipo = "Seguro de Carro";
         this.carro = carro;
         this.idade = idade;
         definirPrecoPorIdade(idade);
