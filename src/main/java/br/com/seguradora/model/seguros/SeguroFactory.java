@@ -9,7 +9,7 @@ public class SeguroFactory {
         } else if (type.equalsIgnoreCase("SeguroResidencia")) {
             return new SeguroResidencia(500000, true, false, true, false, 1990);
         } else if (type.equalsIgnoreCase("SeguroVida")) {
-            return new SeguroVida(20);
+            return new SeguroVida(20,false,false);
         }
         return null;
     }
