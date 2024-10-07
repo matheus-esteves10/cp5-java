@@ -8,9 +8,8 @@ public class SeguroFactory {
             return new SeguroCarro(CarroEnum.CARRO1, 20); // Retorna o tipo ISeguro
         } else if (type.equalsIgnoreCase("SeguroResidencia")) {
             return new SeguroResidencia(500000);
-//        } else if (type.equalsIgnoreCase("SeguroVida")) {
-//            return new SeguroVida();
-//        }
+        } else if (type.equalsIgnoreCase("SeguroVida")) {
+            return new SeguroVida(20);
         }
         return null;
     }

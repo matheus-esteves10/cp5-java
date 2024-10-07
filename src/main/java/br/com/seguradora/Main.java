@@ -26,13 +26,14 @@ public class Main {
             System.out.println("Valor do seguro de residência: " + preco);
         }
 
-//        ISeguro seguroVida = factory.getSeguro("SeguroVida");
-//        if (seguroVida instanceof SeguroVida) {
-//            SeguroVida seguroVidaCast = (SeguroVida) seguroVida;
-//            double valor = seguroVidaCast.retornaValor(20);
-//            System.out.println("Valor do seguro de vida: " + valor);
-//        }
-//
+        ISeguro seguroVida = factory.getSeguro("SeguroVida");
+        if (seguroVida instanceof SeguroVida) {
+            SeguroVida seguroVidaCast = (SeguroVida) seguroVida;
+
+            var preco = seguroVidaCast.getInfos();
+            System.out.println("Valor do seguro de vida: " + preco);
+        }
+
 
 
     }

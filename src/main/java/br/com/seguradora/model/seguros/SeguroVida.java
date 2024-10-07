@@ -7,7 +7,8 @@ public class SeguroVida extends Seguro implements ISeguro, IPrecificacaoVida {
     double valor;
 
     public SeguroVida(int idade) {
-        this.valor = retornaValor(idade);
+        super();
+        retornaValor(idade);
     }
 
     public double getValor() {
@@ -20,17 +21,21 @@ public class SeguroVida extends Seguro implements ISeguro, IPrecificacaoVida {
     }
 
     @Override
-    public double retornaValor(int idade) {
+    public void retornaValor(int idade) {
+        double preco = 0;
+
         if (idade >= 0 && idade < 18) {
-            return 200;
+            preco = 200;
         } else if (idade >= 18 && idade < 35) {
-            return 350;
+            preco = 350;
         } else if (idade >= 35 && idade < 50) {
-            return 500;
+            preco = 500;
         } else if (idade >= 50 && idade < 65) {
-            return 700;
+            preco =  700;
         } else {
-            return 900;
+            preco = 900;
         }
+
+        getInfos().put("seguroVida", preco);
     }
 }
