@@ -1,12 +1,13 @@
 package br.com.seguradora.model.cliente;
 
 import br.com.seguradora.model.seguros.Seguro;
+import br.com.seguradora.service.ICliente;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
-public class Cliente {
+public class Cliente implements ICliente {
     Seguro seguro = new Seguro();
 
     private Long id;
@@ -95,6 +96,7 @@ public class Cliente {
     }
 
     //verifica se o cpf é valido
+    @Override
     public boolean isCpfValid(String cpf) {
         cpf = cpf.replaceAll("[^0-9]", ""); // Remover caracteres não numéricos
 
@@ -131,6 +133,5 @@ public class Cliente {
         // CPF válido
         return true;
     }
-
 }
 
