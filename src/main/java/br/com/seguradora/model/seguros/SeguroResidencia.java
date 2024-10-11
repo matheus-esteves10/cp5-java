@@ -12,10 +12,9 @@ public class SeguroResidencia extends Seguro implements ISeguro, IPecificacaoRes
     private int anoConstrucao;
 
 
-    public SeguroResidencia(double valorResidencia, boolean temSistemaSeguranca, boolean coberturaRoubo, boolean coberturaIncendio,
+    public SeguroResidencia(String tipo, double valor ,double valorResidencia, boolean temSistemaSeguranca, boolean coberturaRoubo, boolean coberturaIncendio,
                             boolean coberturaDesastresNaturais, int anoConstrucao) {
-        super();
-        this.tipo = "SeguroResidencia";
+        super(tipo,valor);
         this.valorResidencia = valorResidencia;
         this.temSistemaSeguranca = temSistemaSeguranca;
         this.coberturaRoubo = coberturaRoubo;
@@ -74,7 +73,8 @@ public class SeguroResidencia extends Seguro implements ISeguro, IPecificacaoRes
         if (coberturaDesastresNaturais) {
             valor += 700;
         }
-        getInfos().put("seguroResidencia", valor);
+        setTipo("seguroResidencia");
+        setValor(valor);
     }
 
 }

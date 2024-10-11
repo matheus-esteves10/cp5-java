@@ -8,8 +8,8 @@ public class SeguroVida extends Seguro implements ISeguro, IPrecificacaoVida {
     private boolean temDoencaPreExistente;
     private boolean praticaEsportesRadicais;
 
-    public SeguroVida(int idade, boolean temDoencaPreExistente, boolean praticaEsportesRadicais) {
-        super();
+    public SeguroVida(String tipo, double valor, int idade, boolean temDoencaPreExistente, boolean praticaEsportesRadicais) {
+        super(tipo,valor);
         retornaValor(idade);
         this.temDoencaPreExistente = temDoencaPreExistente;
         this.praticaEsportesRadicais = praticaEsportesRadicais;
@@ -37,13 +37,14 @@ public class SeguroVida extends Seguro implements ISeguro, IPrecificacaoVida {
             preco = 900;
         }
         if (temDoencaPreExistente) {
-            valor *= 1.3; // Aumento de 30% para quem tem doenças preexistentes
+            preco *= 1.3; // Aumento de 30% para quem tem doenças preexistentes
         }
 
         if (praticaEsportesRadicais) {
-            valor *= 1.4; // Aumento de 40% para quem pratica esportes radicais
+            preco *= 1.4; // Aumento de 40% para quem pratica esportes radicais
         }
 
-        getInfos().put("seguroVida", preco);
+        setTipo("seguroVida");
+        setValor(preco);
     }
 }

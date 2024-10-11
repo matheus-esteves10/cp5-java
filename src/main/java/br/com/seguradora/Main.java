@@ -14,7 +14,7 @@ public class Main {
             SeguroCarro seguroCarroCast = (SeguroCarro) seguroCarro;
 
 
-            var preco = seguroCarroCast.getInfos();
+            var preco = seguroCarroCast.getValor();
             System.out.println("Valor do seguro do carro: " + preco);
         }
 
@@ -22,7 +22,7 @@ public class Main {
         if (seguroResidencia instanceof SeguroResidencia) {
             SeguroResidencia seguroResidenciaCast = (SeguroResidencia) seguroResidencia;
 
-            var preco = seguroResidenciaCast.getInfos();
+            var preco = seguroResidenciaCast.getValor();
             System.out.println("Valor do seguro de residência: " + preco);
         }
 
@@ -30,7 +30,7 @@ public class Main {
         if (seguroVida instanceof SeguroVida) {
             SeguroVida seguroVidaCast = (SeguroVida) seguroVida;
 
-            var preco = seguroVidaCast.getInfos();
+            var preco = seguroVidaCast.getValor();
             System.out.println("Valor do seguro de vida: " + preco);
         }
 

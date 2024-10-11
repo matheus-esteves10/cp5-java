@@ -8,13 +8,12 @@ public class SeguroCarro extends Seguro implements IPrecificacaoCarro, ISeguro {
     private CarroEnum carro;
     private int idade;
 
-    public SeguroCarro() {
-        super();
+    public SeguroCarro(String tipo, double valor) {
+        super(tipo, valor);
     }
 
-    public SeguroCarro(CarroEnum carro, int idade) {
-        super();
-        this.tipo = "Seguro de Carro";
+    public SeguroCarro(String tipo, double valor ,CarroEnum carro, int idade) {
+        super(tipo, valor);
         this.carro = carro;
         this.idade = idade;
         definirPrecoPorIdade(idade);
@@ -35,7 +34,8 @@ public class SeguroCarro extends Seguro implements IPrecificacaoCarro, ISeguro {
             valor = valorBase + (valorBase * 0.1); // 10% a mais
         }
 
-        getInfos().put(tipo, valor);
+        setTipo("seguroCarro");
+        setValor(valor);
     }
 
     @Override

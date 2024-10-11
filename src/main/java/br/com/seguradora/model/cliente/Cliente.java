@@ -82,7 +82,7 @@ public class Cliente implements ICliente {
     }
 
     public void setListaSeguro(List<Seguro> listaSeguro) {
-        listaSeguro.add((Seguro) seguro.getInfos());
+        listaSeguro.add(seguro);
         this.listaSeguro = listaSeguro;
     }
 
