@@ -9,5 +9,5 @@ public interface IClienteDao {
     void salvar(Cliente cliente);
     List<Cliente> readAll();
     void update(Cliente cliente);
-    void deletar(Long id);
+    void delete(Long id);
 }

@@ -85,5 +85,22 @@ public class ClienteDaoImpl implements IClienteDao{
         }
     }
 
+
+    @Override
+    public void delete(Long id) {
+        String sql = "DELETE FROM CLIENTE WHERE id = ?";
+
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setLong(1, id);
+            statement.executeUpdate();
+            statement.close();
+            System.out.println("Cliente removido com sucesso.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
 
