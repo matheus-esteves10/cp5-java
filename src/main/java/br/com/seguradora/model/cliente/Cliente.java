@@ -29,6 +29,9 @@ public class Cliente implements ICliente {
         this.idade = (int) ChronoUnit.YEARS.between(dataNasc, LocalDate.now());
     }
 
+    public int getIdade() {
+        return idade;
+    }
 
     public Long getId() {
         return id;
