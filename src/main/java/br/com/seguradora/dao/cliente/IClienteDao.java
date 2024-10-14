@@ -7,7 +7,7 @@ import java.util.List;
 public interface IClienteDao {
 
     void salvar(Cliente cliente);
-    public List<Cliente> buscarTodos();
-    void atualizar(Cliente cliente);
+    List<Cliente> readAll();
+    void update(Cliente cliente);
     void deletar(Long id);
 }
