@@ -8,9 +8,9 @@ public class MainDao {
 
     //todo : adicionar as informações do banco
     DatabaseConfig config = DatabaseConfig.getInstance(
-            "url",
-            "user",
-            "password"
+            "oracle.fiap.com.br",
+            "RM554694",
+            "030906"
     );
 
     Connection connection = config.getConnection();
