@@ -1,6 +1,7 @@
 package br.com.seguradora.dao.cliente;
 
 import br.com.seguradora.model.cliente.Cliente;
+import br.com.seguradora.service.ICliente;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,8 +20,8 @@ public class ClienteDaoImpl implements IClienteDao{
     }
 
     @Override
-    public void salvar(Cliente cliente) {
-        String sql = "INSERT INTO CLIENTE (id, nome, cpf, is_ativo, dataNasc, idade) VALUES (?, ?, ?, ?, ?)";
+    public void create(Cliente cliente) {
+        String sql = "INSERT INTO CLIENTE (id, nome, cpf, is_ativo, dataNasc, idade) VALUES (?, ?, ?, ?, ?,?)";
 
         try {
             PreparedStatement statement = connection.prepareStatement(sql);

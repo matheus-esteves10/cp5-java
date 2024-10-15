@@ -17,7 +17,7 @@ public class DatabaseConfig {
         this.password = password;
     }
 
-    // Métod.o público para retornar a única instância
+    // Método público para retornar a única instância
     public static synchronized DatabaseConfig getInstance(String url, String user, String password) {
         if (instance == null) {
             instance = new DatabaseConfig(url, user, password);

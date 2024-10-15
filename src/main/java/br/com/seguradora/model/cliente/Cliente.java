@@ -136,5 +136,19 @@ public class Cliente implements ICliente {
         // CPF válido
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "seguro=" + seguro +
+                ", id=" + id +
+                ", nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", isAtivo=" + isAtivo +
+                ", listaSeguro=" + listaSeguro +
+                ", dataNasc=" + dataNasc +
+                ", idade=" + idade +
+                '}';
+    }
 }
 

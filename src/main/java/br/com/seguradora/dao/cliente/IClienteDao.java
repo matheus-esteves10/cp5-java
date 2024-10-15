@@ -6,8 +6,11 @@ import java.util.List;
 
 public interface IClienteDao {
 
-    void salvar(Cliente cliente);
+    void create(Cliente cliente);
+
     List<Cliente> readAll();
+
     void update(Cliente cliente);
+
     void delete(Long id);
 }
