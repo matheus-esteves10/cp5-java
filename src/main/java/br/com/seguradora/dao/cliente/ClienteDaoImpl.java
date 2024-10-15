@@ -21,7 +21,7 @@ public class ClienteDaoImpl implements IClienteDao{
 
     @Override
     public void create(Cliente cliente) {
-        String sql = "INSERT INTO CLIENTE (id, nome, cpf, is_ativo, dataNasc, idade) VALUES (?, ?, ?, ?, ?,?)";
+        String sql = "INSERT INTO CLIENTE (id, nome, cpf, isAtivo, dataNasc, idade) VALUES (?, ?, ?, ?, ?,?)";
 
         try {
             PreparedStatement statement = connection.prepareStatement(sql);
@@ -69,7 +69,7 @@ public class ClienteDaoImpl implements IClienteDao{
 
     @Override
     public void update(Cliente cliente) {
-        String sql = "UPDATE CLIENTE SET nome = ?, cpf = ?, is_ativo = ?, data_nasc = ? WHERE id = ?";
+        String sql = "UPDATE CLIENTE SET nome = ?, cpf = ?, isAtivo = ?, dataNasc = ?, idade =? WHERE id = ?";
 
         try{
             PreparedStatement statement = connection.prepareStatement(sql);
@@ -77,7 +77,8 @@ public class ClienteDaoImpl implements IClienteDao{
             statement.setString(2, cliente.getCpf());
             statement.setInt(3, cliente.isAtivo() ? 1 : 0);
             statement.setDate(4, java.sql.Date.valueOf(cliente.getDataNasc()));
-            statement.setLong(5, cliente.getId());
+            statement.setInt(5, cliente.getIdade());
+            statement.setLong(6, cliente.getId());
             statement.executeUpdate();
             statement.close();
             System.out.println("Cliente atualizado com sucesso: " + cliente.getNome());
