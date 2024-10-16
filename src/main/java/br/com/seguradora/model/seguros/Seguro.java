@@ -3,23 +3,32 @@ package br.com.seguradora.model.seguros;
 public class Seguro {
     protected String tipo;
     protected double valor;
-    protected Long id_cliente;
+    protected Long idCliente;
+    protected Long id;
 
     public Seguro() {
     }
 
-    public Seguro(String tipo, double valor, Long id_cliente) {
+    public Seguro(String tipo, double valor, Long idCliente) {
         this.tipo = tipo;
         this.valor = valor;
-        this.id_cliente = id_cliente;
+        this.idCliente = idCliente;
     }
 
-    public Long getId_cliente() {
-        return id_cliente;
+    public Long getId() {
+        return id;
     }
 
-    public void setId_cliente(Long id_cliente) {
-        this.id_cliente = id_cliente;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(Long id_cliente) {
+        this.idCliente = id_cliente;
     }
 
     public String getTipo() {
@@ -43,7 +52,7 @@ public class Seguro {
         return "Seguro{" +
                 "tipo='" + tipo + '\'' +
                 ", valor=" + valor +
-                ", id_cliente=" + id_cliente +
+                ", idCliente=" + idCliente +
                 '}';
     }
 }

@@ -8,12 +8,12 @@ public class SeguroCarro extends Seguro implements IPrecificacaoCarro, ISeguro {
     private CarroEnum carro;
     private int idade;
 
-    public SeguroCarro(String tipo, double valor) {
-        super(tipo, valor);
+    public SeguroCarro(String tipo, double valor, Long id_cliente) {
+        super(tipo, valor, id_cliente);
     }
 
-    public SeguroCarro(String tipo, double valor ,CarroEnum carro, int idade) {
-        super(tipo, valor);
+    public SeguroCarro(String tipo, double valor, Long idCliente, CarroEnum carro, int idade) {
+        super(tipo, valor, idCliente);
         this.carro = carro;
         this.idade = idade;
         definirPrecoPorIdade(idade);

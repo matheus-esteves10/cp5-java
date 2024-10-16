@@ -12,9 +12,9 @@ public class SeguroResidencia extends Seguro implements ISeguro, IPecificacaoRes
     private int anoConstrucao;
 
 
-    public SeguroResidencia(String tipo, double valor ,double valorResidencia, boolean temSistemaSeguranca, boolean coberturaRoubo, boolean coberturaIncendio,
+    public SeguroResidencia(String tipo, double valor, Long idCliente ,double valorResidencia, boolean temSistemaSeguranca, boolean coberturaRoubo, boolean coberturaIncendio,
                             boolean coberturaDesastresNaturais, int anoConstrucao) {
-        super(tipo,valor);
+        super(tipo,valor,idCliente);
         this.valorResidencia = valorResidencia;
         this.temSistemaSeguranca = temSistemaSeguranca;
         this.coberturaRoubo = coberturaRoubo;

@@ -52,8 +52,7 @@ public class ClienteDaoImpl implements IClienteDao{
                         resultSet.getLong("id"),
                         resultSet.getString("nome"),
                         resultSet.getString("cpf"),
-                        resultSet.getInt("is_ativo") == 1,
-                        null,
+                        resultSet.getInt("isAtivo") == 1,
                         resultSet.getDate("dataNasc").toLocalDate(),
                         resultSet.getInt("idade")
                 );

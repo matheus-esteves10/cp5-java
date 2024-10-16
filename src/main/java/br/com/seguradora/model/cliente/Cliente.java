@@ -19,12 +19,15 @@ public class Cliente implements ICliente {
     private int idade;
 
 
-    public Cliente(Long id, String nome, String cpf, boolean isAtivo, List<Seguro> listaSeguro, LocalDate dataNasc, int idade) {
+    public Cliente(Long id, String nome, String cpf, boolean isAtivo, LocalDate dataNasc, int idade) {
         this.id = id;
         this.nome = nome;
-        isCpfValid(cpf);
+        if(isCpfValid(cpf)){
+            this.cpf = cpf;
+        }else{
+            throw new IllegalArgumentException("CPF invalido");
+        }
         this.isAtivo = isAtivo;
-        setListaSeguro(listaSeguro);
         setDataNasc(dataNasc);
         this.idade = (int) ChronoUnit.YEARS.between(dataNasc, LocalDate.now());
     }
@@ -140,12 +143,10 @@ public class Cliente implements ICliente {
     @Override
     public String toString() {
         return "Cliente{" +
-                "seguro=" + seguro +
-                ", id=" + id +
+                " id=" + id +
                 ", nome='" + nome + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", isAtivo=" + isAtivo +
-                ", listaSeguro=" + listaSeguro +
                 ", dataNasc=" + dataNasc +
                 ", idade=" + idade +
                 '}';

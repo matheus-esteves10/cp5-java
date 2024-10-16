@@ -8,8 +8,8 @@ public class SeguroVida extends Seguro implements ISeguro, IPrecificacaoVida {
     private boolean temDoencaPreExistente;
     private boolean praticaEsportesRadicais;
 
-    public SeguroVida(String tipo, double valor, int idade, boolean temDoencaPreExistente, boolean praticaEsportesRadicais) {
-        super(tipo,valor);
+    public SeguroVida(String tipo, double valor, Long idCliente, int idade, boolean temDoencaPreExistente, boolean praticaEsportesRadicais) {
+        super(tipo,valor,idCliente);
         retornaValor(idade);
         this.temDoencaPreExistente = temDoencaPreExistente;
         this.praticaEsportesRadicais = praticaEsportesRadicais;

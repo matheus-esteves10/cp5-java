@@ -18,10 +18,10 @@ public class SeguroDaoImpl implements ISeguroDao{
 
     @Override
     public void create(Seguro s1) {
-        String sql = "INSERT INTO SEGURO(id_cliente,valor,tipoSeguro) VALUES(?,?,?)";
+        String sql = "INSERT INTO SEGURO(cliente_id,valor,tipoSeguro) VALUES(?,?,?)";
         try{
             PreparedStatement stat = connection.prepareStatement(sql);
-            stat.setLong(1,s1.getId_cliente());
+            stat.setLong(1,s1.getIdCliente());
             stat.setDouble(2,s1.getValor());
             stat.setString(3,s1.getTipo());
 
@@ -46,7 +46,7 @@ public class SeguroDaoImpl implements ISeguroDao{
                 Seguro seguro = new Seguro(
                         rs.getString("tipoSeguro"),
                         rs.getDouble("valor"),
-                        rs.getLong("id_cliente")
+                        rs.getLong("cliente_id")
                 );
                 listaSeguros.add(seguro);
             }
@@ -60,13 +60,13 @@ public class SeguroDaoImpl implements ISeguroDao{
 
     @Override
     public void update(Seguro s1) {
-        String sql = "UPDATE SEGURO SET tipoSeguro = ?, valor = ? WHERE id_cliente = ? ";
+        String sql = "UPDATE SEGURO SET tipoSeguro = ?, valor = ? WHERE cliente_id = ? ";
         try {
             PreparedStatement stat = connection.prepareStatement(sql);
 
             stat.setString(1,s1.getTipo());
             stat.setDouble(2,s1.getValor());
-            stat.setLong(3,s1.getId_cliente());
+            stat.setLong(3,s1.getIdCliente());
 
             stat.executeUpdate();
 
@@ -81,7 +81,7 @@ public class SeguroDaoImpl implements ISeguroDao{
 
     @Override
     public void delete(Long id) {
-        String sql = "DELETE FROM SEGURO WHERE id_cliente = ?";
+        String sql = "DELETE FROM SEGURO WHERE cliente_id = ?";
         try {
             PreparedStatement stat = connection.prepareStatement(sql);
 
